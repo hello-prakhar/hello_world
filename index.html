@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hello World - Creative</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+
+  .container {
+    text-align: center;
+    color: #fff;
+    position: relative;
+  }
+
+  h1 {
+    font-size: 5rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    position: relative;
+    animation: fadeInDrop 2s ease forwards;
+    opacity: 0;
+  }
+
+  h1::after {
+    content: '👋';
+    font-size: 5rem;
+    position: absolute;
+    right: -90px;
+    top: 0;
+    opacity: 0;
+    animation: waveHand 2s infinite ease-in-out 2s;
+  }
+
+  @keyframes fadeInDrop {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+      filter: blur(4px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes waveHand {
+    0%, 100% { transform: rotate(0deg); opacity: 1; }
+    50% { transform: rotate(15deg); opacity: 0.8; }
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: #d1d1ff;
+    animation: slideUpFade 3s ease forwards;
+    opacity: 0;
+  }
+
+  @keyframes slideUpFade {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .background-shapes {
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(circle at center, rgba(255 255 255 / 0.1) 0%, transparent 70%);
+    animation: rotateBg 20s linear infinite;
+    z-index: 0;
+  }
+
+  @keyframes rotateBg {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="background-shapes"></div>
+  <div class="container" role="main">
+    <h1>Hello World</h1>
+    <p class="subtitle">How are you all?</p>
+  </div>
+</body>
+</html>
+
+
